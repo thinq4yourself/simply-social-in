@@ -14,7 +14,8 @@ import {
   Image,
   Search,
   Dropdown,
-  Icon
+  Icon,
+  Responsive
 } from 'semantic-ui-react'
 
 const mapStateToProps = state => ({
@@ -43,15 +44,17 @@ const LoggedOutView = props => {
       <Menu.Item style={{paddingBottom: '1rem'}}><Link to='/'><Image src='/images/logo.png' alt={props.appName} height='30' /></Link></Menu.Item>
       <Menu.Item position='right'>
         <Menu.Item as='div' style={{padding: '3px'}}>
-          <Search
-            loading={props.isLoading}
-            onResultSelect={props.handleResultSelect}
-            onSearchChange={props.handleSearchChange}
-            results={props.results}
-            value={props.value}
-            className='search-box'
-            {...props}
-          />
+          <Responsive minWidth={768}>
+            <Search
+              loading={props.isLoading}
+              onResultSelect={props.handleResultSelect}
+              onSearchChange={props.handleSearchChange}
+              results={props.results}
+              value={props.value}
+              className='search-box'
+              {...props}
+            />
+          </Responsive>
         </Menu.Item>
         <Menu.Item as='div' style={{padding: '3px'}}><Button as='div' inverted style={{ margin: 'auto' }} className='white'><Link to='/login' className='white'>Log in</Link></Button></Menu.Item>
       </Menu.Item>
@@ -69,15 +72,17 @@ const LoggedInView = props => {
       <Menu.Item position='right'>
         <Menu.Item as='div'><Link to='/' className='nav-link'><Image src='/images/create.png' /></Link></Menu.Item>
         <Menu.Item as='div' style={{padding: '3px'}}>
-          <Search
-            loading={props.isLoading}
-            onResultSelect={props.handleResultSelect}
-            onSearchChange={props.handleSearchChange}
-            results={props.results}
-            value={props.value}
-            className='search-box'
-            {...props}
-          />
+          <Responsive minWidth={768}>
+            <Search
+              loading={props.isLoading}
+              onResultSelect={props.handleResultSelect}
+              onSearchChange={props.handleSearchChange}
+              results={props.results}
+              value={props.value}
+              className='search-box'
+              {...props}
+            />
+          </Responsive>
         </Menu.Item>
         <Menu.Item as='div' className=''>
           <Dropdown trigger={DropDownTrigger} pointing='top left' icon={null}>

@@ -10,7 +10,8 @@ import {
   Modal,
   Button,
   Icon,
-  Portal
+  Portal,
+  Responsive
 } from 'semantic-ui-react'
 import faker from 'faker';
 import ReactFilepicker from 'react-filepicker';
@@ -161,12 +162,14 @@ class Banner extends React.Component {
                 <Input value={this.props.title} onChange={this.changeTitle} inverted fluid icon='comment outline' iconPosition='left' placeholder="What's on your mind?" className='start-post' />
               </Form.Field>
               <Menu secondary inverted>
-                <Modal open={this.state.modalOpen} onClose={this.handleModalClose} trigger={<Menu.Item name='Add image' as='a' icon='image' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
-                  <Header icon='image' content='Add media' />
-                  <Modal.Actions>
-                    <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={true} options={options} onSuccess={this.afterUpload} />
-                  </Modal.Actions>
-                </Modal>
+                <Responsive minWidth={768}>
+                  <Modal open={this.state.modalOpen} onClose={this.handleModalClose} trigger={<Menu.Item name='Add image' as='a' icon='image' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
+                    <Header icon='image' content='Add media' />
+                    <Modal.Actions>
+                      <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={true} options={options} onSuccess={this.afterUpload} />
+                    </Modal.Actions>
+                  </Modal>
+                </Responsive>
                 <Modal open={this.state.modal2Open} onClose={this.handleModal2Close} trigger={<Menu.Item name='Add video' as='a' icon='video' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
                   <Header icon='video' content='Add video' />
                   <Modal.Actions>

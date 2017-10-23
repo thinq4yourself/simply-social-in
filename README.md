@@ -124,6 +124,7 @@ $ firebase deploy
 ```
 
 ### To deploy to Heroku:
+[Zero-configuration Deploy to Heroku](https://blog.heroku.com/deploying-react-with-zero-configuration)
 ```
 $ heroku login  # login to firebase toolbelt
 $ yarn build

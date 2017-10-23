@@ -72,6 +72,25 @@ The example application is a social site (i.e. a twitter.com clone) called "Simp
   - Live Posts/User API for even smart demo data
 - Filepicker for image/video upload
 
+## Redux Overview
+The app is built as a Redux pure app. Since the app is small I used minimalistic configuration and pure containers. 
+
+Here are some of the available Redux actions and reducers being dispatched. You can checkout all of them out in [`src/reducers/*`](#)
+
+```
+export const APP_LOAD = 'APP_LOAD';
+export const REDIRECT = 'REDIRECT';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const REGISTER = 'REGISTER';
+export const LOGIN_PAGE_UNLOADED = 'LOGIN_PAGE_UNLOADED';
+export const REGISTER_PAGE_UNLOADED = 'REGISTER_PAGE_UNLOADED';
+export const ASYNC_START = 'ASYNC_START';
+export const ASYNC_END = 'ASYNC_END';
+
+...
+```
+
 ## App Hosting
 I chose to host this on Firebase via CDN and reduce the overheard of a Node server. As a real world example this is lower maintenance and less overhead for simple apps and landing pages 
 
@@ -97,7 +116,7 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 
 #### Use cases
 
-| Case  | Url  | Class  |
+| Case  | Url/Page  | Class  |
 |---|:-:|---|
 | User profile  | [@sampleusertester](https://simply-social-in.firebaseapp.com/@sampleusertester)  | Profile.js  |
 | Favorites  | [/@sampleusertester/favorite](https://simply-social-in.firebaseapp.com/@sampleusertester/favorites)  | [`ProfileFavorites.js`](#)  |
@@ -110,6 +129,8 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 | User Settings  | [/settings](https://simply-social-in.firebaseapp.com/settings)  | [`Settings.js`](#)  |
 | Login  | [/login](https://simply-social-in.firebaseapp.com/login)  | [`Login.js`](#)  |
 | Register  | [/register](https://simply-social-in.firebaseapp.com/register)  | [`Register.js`](#)  |
+| Favorite  | [/](https://simply-social-in.firebaseapp.com/)  | [`PostPreview.js`](#)  |
+| Unfavorite  | [/register](https://simply-social-in.firebaseapp.com/)  | [`PostPreview.js`](#)  |
 
 
 ---

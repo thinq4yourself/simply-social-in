@@ -1,0 +1,90 @@
+.ui.secondary.pointing.menu .item {
+    padding: 8px;
+}
+.ui.inverted.segment, .ui.primary.inverted.segment {
+    background: #262728;
+}
+
+.search0box {
+    margin: auto 10px;
+}
+.search-box .ui.input input {
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #ccc;
+}
+.search-box .ui.input i {
+    color: white;
+}
+.center-align {
+    padding-bottom: 13px !important;
+}
+
+.tag-list {
+    display: none !important;
+}
+
+.new-post {
+    margin-top: 2rem !important;
+    opacity: .8;
+}
+.start-post input {
+    background: transparent !important;
+    border: none !important;
+    padding: 30px !important;
+    color: white !important;
+    font-size: 2.5rem !important;
+}
+
+.ui.secondary.inverted.pointing.menu .active.item {
+    border-width: 4px;
+    border-color: #00B286;
+}
+
+.fixed-width {
+    width: 600px !important;
+    margin: 0 auto !important;
+}
+
+.login-form {
+    margin-top: 4rem;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.white) {
+    color: black !important;
+}
+
+.white {
+    color: #fff !important;
+}
+
+a.white:hover, .white a:hover {
+    color: #666 !important;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #fff;
+}
+
+.only-child {
+    padding: 1rem 0 0 0 !important;
+}
+
+.hide {
+    display: none !important;
+}

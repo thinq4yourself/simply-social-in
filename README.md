@@ -94,9 +94,7 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 | Favorites  | [@sampleusertester/favorite](https://simply-social-in.firebaseapp.com/@sampleusertester/favorites)  | [`ProfileFavorites.js`](#)  |
 | Followers  | [@sampleusertester/follower](https://simply-social-in.firebaseapp.com/@sampleusertester/followers)  | [`ProfileFollwers.js`](#)  |
 | Home  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/index.js`](#)  |
-|
 | Add message  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/Banner.js`](#)  |
-|
 | View message  | [home](https://simply-social-in.firebaseapp.com/post/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
 | Edit message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
 | Delete message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |

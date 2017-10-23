@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
   })
 });
 
-const ArticlePreview = props => {
+const PostPreview = props => {
   const article = props.article;
 
   const handleClick = ev => {
@@ -59,8 +59,8 @@ const ArticlePreview = props => {
         <Card.Content>
           <Card.Header>
             <Header as='h4' color='black'>
-              <Link to={`/article/${article.slug}`} className='ui header black'><Image floated='left' size='mini' shape='rounded' src={faker.internet.avatar()} /></Link>
-              <Link to={`/article/${article.slug}`} className='ui header black'>{faker.name.firstName() + ' ' + faker.name.lastName()}</Link>
+              <Link to={`/post/${article.slug}`} className='ui header black'><Image floated='left' size='mini' shape='rounded' src={faker.internet.avatar()} /></Link>
+              <Link to={`/post/${article.slug}`} className='ui header black'>{faker.name.firstName() + ' ' + faker.name.lastName()}</Link>
               <Card.Meta>
                 {article.title}
               </Card.Meta>
@@ -104,4 +104,4 @@ const ArticlePreview = props => {
   );
 }
 
-export default connect(() => ({}), mapDispatchToProps)(ArticlePreview);
+export default connect(() => ({}), mapDispatchToProps)(PostPreview);

@@ -1,4 +1,4 @@
-import ArticleMeta from './ArticleMeta';
+import PostMeta from './PostMeta';
 import CommentContainer from './CommentContainer';
 import React from 'react';
 import faker from 'faker';
@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: ARTICLE_PAGE_UNLOADED })
 });
 
-class Article extends React.Component {
+class Post extends React.Component {
   componentWillMount() {
     this.props.onLoad(Promise.all([
       api.Articles.get(this.props.match.params.id),
@@ -97,7 +97,7 @@ class Article extends React.Component {
                 <Header.Content>
                   {this.props.article.title}
                 </Header.Content>
-                <Header.Subheader><ArticleMeta article={this.props.article} canModify={canModify} /></Header.Subheader>
+                <Header.Subheader><PostMeta article={this.props.article} canModify={canModify} /></Header.Subheader>
               </Header>
             </Segment>
           </Container>
@@ -155,4 +155,4 @@ class Article extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Article);
+export default connect(mapStateToProps, mapDispatchToProps)(Post);

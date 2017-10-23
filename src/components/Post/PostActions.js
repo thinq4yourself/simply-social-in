@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: DELETE_ARTICLE, payload })
 });
 
-const ArticleActions = props => {
+const PostActions = props => {
   const article = props.article;
   const del = () => {
     props.onClickDelete(api.Articles.del(article.slug))
@@ -38,4 +38,4 @@ const ArticleActions = props => {
   );
 };
 
-export default connect(() => ({}), mapDispatchToProps)(ArticleActions);
+export default connect(() => ({}), mapDispatchToProps)(PostActions);

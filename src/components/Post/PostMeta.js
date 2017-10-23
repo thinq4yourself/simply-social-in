@@ -1,14 +1,14 @@
-import ArticleActions from './ArticleActions';
+import PostActions from './PostActions';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import faker from 'faker';
 import { Item, Icon } from 'semantic-ui-react'
 
-const ArticleMeta = props => {
+const PostMeta = props => {
   const article = props.article;
   return (
     <div>
-      <ArticleActions canModify={props.canModify} article={article} style={{position: 'absolute', right: 0}} />
+      <PostActions canModify={props.canModify} article={article} style={{position: 'absolute', right: 0}} />
       <Item.Group>
         <Item>
           <Item.Image size='mini' rounded src={article.author.image} alt={article.author.username} />
@@ -25,4 +25,4 @@ const ArticleMeta = props => {
   );
 };
 
-export default ArticleMeta;
+export default PostMeta;

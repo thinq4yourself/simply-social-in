@@ -41,7 +41,7 @@ export default (state = defaultState, action) => {
       const HomeredirectUrl = `/`;
       return { ...state, redirectTo: HomeredirectUrl };
     case ARTICLE_SUBMITTED:
-      const redirectUrl = `/article/${action.payload.article.slug}`;
+      const redirectUrl = `/post/${action.payload.article.slug}`;
       return { ...state, redirectTo: redirectUrl };
     case SETTINGS_SAVED:
       return {

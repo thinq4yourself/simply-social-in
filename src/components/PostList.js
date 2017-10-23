@@ -1,4 +1,4 @@
-import ArticlePreview from './ArticlePreview';
+import PostPreview from './PostPreview';
 import ListPagination from './ListPagination';
 import React from 'react';
 import { Card } from 'semantic-ui-react'
@@ -24,7 +24,7 @@ const ArticleList = props => {
         {
           props.articles.map(article => {
             return (
-              <ArticlePreview article={article} key={article.slug} />
+              <PostPreview article={article} key={article.slug} />
             );
           })
         }

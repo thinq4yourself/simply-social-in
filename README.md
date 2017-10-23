@@ -86,6 +86,15 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 > - Firebase Project: https://console.firebase.google.com/project/simply-social-in/
 >   - Request access to audit if you like
 
+--- 
+
+### Heroku Demo
+> - Heroku Demo: https://simply-social-in.herokuapp.com/
+> - Heroku Project: https://dashboard.heroku.com/apps/simply-social-in
+>   - Request access to audit if you like
+
+---
+
 #### Use cases
 
 | Case  | Url  | Class  |
@@ -102,13 +111,6 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 | Login  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Login.js`](#)  |
 | Register  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Register.js`](#)  |
 
-
---- 
-
-### Heroku Demo
-> - Heroku Demo: https://simply-social-in.herokuapp.com/
-> - Heroku Project: https://dashboard.heroku.com/apps/simply-social-in
->   - Request access to audit if you like
 
 ---
 

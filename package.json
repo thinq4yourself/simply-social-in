@@ -1,6 +1,6 @@
 {
   "name": "simply-social",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "devDependencies": {
     "cross-env": "^4.0.0",

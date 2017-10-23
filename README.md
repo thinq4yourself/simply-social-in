@@ -100,16 +100,16 @@ Plus Firebase also comes packed with features like Auth, Node in the cloud (Func
 | Case  | Url  | Class  |
 |---|:-:|---|
 | User profile  | [@sampleusertester](https://simply-social-in.firebaseapp.com/@sampleusertester)  | Profile.js  |
-| Favorites  | [@sampleusertester/favorite](https://simply-social-in.firebaseapp.com/@sampleusertester/favorites)  | [`ProfileFavorites.js`](#)  |
-| Followers  | [@sampleusertester/follower](https://simply-social-in.firebaseapp.com/@sampleusertester/followers)  | [`ProfileFollwers.js`](#)  |
-| Home  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/index.js`](#)  |
-| Add message  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/Banner.js`](#)  |
-| View message  | [home](https://simply-social-in.firebaseapp.com/post/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
-| Edit message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
-| Delete message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
-| User Settings  | [home](https://simply-social-in.firebaseapp.com/settings)  | [`Settings.js`](#)  |
-| Login  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Login.js`](#)  |
-| Register  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Register.js`](#)  |
+| Favorites  | [/@sampleusertester/favorite](https://simply-social-in.firebaseapp.com/@sampleusertester/favorites)  | [`ProfileFavorites.js`](#)  |
+| Followers  | [/@sampleusertester/follower](https://simply-social-in.firebaseapp.com/@sampleusertester/followers)  | [`ProfileFollwers.js`](#)  |
+| Home  | [/home](https://simply-social-in.firebaseapp.com/)  | [`Home/index.js`](#)  |
+| Add message  | [/home](https://simply-social-in.firebaseapp.com/)  | [`Home/Banner.js`](#)  |
+| View message  | [/post/this-is-my-message-21frvs](https://simply-social-in.firebaseapp.com/post/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| Edit message  | [/editor/this-is-my-message-21frvs](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| Delete message  | [/editor/this-is-my-message-21frvs](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| User Settings  | [/settings](https://simply-social-in.firebaseapp.com/settings)  | [`Settings.js`](#)  |
+| Login  | [/login](https://simply-social-in.firebaseapp.com/login)  | [`Login.js`](#)  |
+| Register  | [/register](https://simply-social-in.firebaseapp.com/register)  | [`Register.js`](#)  |
 
 
 ---

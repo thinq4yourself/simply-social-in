@@ -9,7 +9,8 @@ import {
   Menu,
   Modal,
   Button,
-  Icon
+  Icon,
+  Portal
 } from 'semantic-ui-react'
 import faker from 'faker';
 import ReactFilepicker from 'react-filepicker';
@@ -47,14 +48,52 @@ const mapDispatchToProps = dispatch => ({
 
 const options = {
   buttonText: 'Upload media here',
-  buttonClass: 'ui button inverted teal',
+  buttonClass: 'ui button inverted',
   mimetype: 'image/*',
   container: 'window',
 };
 
+const timeoutLength = 1100
+
 class Banner extends React.Component {
   constructor() {
     super();
+
+    this.state = { isOpen: false, modalOpen: false, modal2Open: false }
+
+    this.handleOpen = message => {
+      this.setState({ isOpen: true, message: message })
+  
+      this.timeout = setTimeout(() => {
+        this.setState({ isOpen: false, message: message })
+      }, timeoutLength)
+    }
+  
+    this.handleClose = () => {
+      this.setState({ isOpen: false, message: 'Hi there :)' })
+      clearTimeout(this.timeout)
+    }
+
+    this.handleModalOpen = message => {
+      this.setState({ modalOpen: true })
+    }
+  
+    this.handleModalClose = () => {
+      this.setState({ modalOpen: false})
+    }
+
+    this.handleModal2Open = message => {
+      this.setState({ modal2Open: true })
+    }
+  
+    this.handleModal2Close = () => {
+      this.setState({ modal2Open: false})
+    }
+
+    this.afterUpload = fpfiles => {
+      this.setState({ modalOpen: false })
+      this.setState({ modal2Open: false })
+    }
 
     const updateFieldEvent =
       key => ev => this.props.onUpdateField(key, ev.target.value);
@@ -73,16 +112,24 @@ class Banner extends React.Component {
 
     this.submitForm = ev => {
       ev.preventDefault();
-      const article = {
-        title: this.props.title,
-        description: faker.lorem.sentence(),
-        body: faker.image.image(),
-        tagList: ['video', 'video']
-      };
+      if (this.props.title) {
+        const article = {
+          title: this.props.title,
+          description: faker.lorem.sentence(),
+          body: faker.image.image(),
+          tagList: ['video', 'video']
+        };
 
-      const promise = api.Articles.create(article);
+        const promise = api.Articles.create(article);
 
-      this.props.onSubmit(promise);
+        this.props.onSubmit(promise);
+        this.handleOpen('Great post!');
+        this.setState({
+          title: '',
+        });
+      } else {
+        this.handleOpen('Whoops! You will need to enter a message.');
+      }
     };
   }
 
@@ -98,6 +145,8 @@ class Banner extends React.Component {
   }
 
   render() {
+    const { isOpen, message } = this.state
+
     return (
       <div style={{ backgroundImage: 'url(/images/header-bg.jpg)' }}>
         <Segment
@@ -107,26 +156,33 @@ class Banner extends React.Component {
         >
         <Container text>
           <Segment textAlign='center' padded='very' inverted color='teal' className='new-post'>
-            <Form className={this.props.currentUser ? 'let' : 'hide'}>
+            <Form className={this.props.currentUser ? 'let' : 'hide'} id='PostForm'>
               <Form.Field>
                 <Input value={this.props.title} onChange={this.changeTitle} inverted fluid icon='comment outline' iconPosition='left' placeholder="What's on your mind?" className='start-post' />
               </Form.Field>
               <Menu secondary inverted>
-                <Modal trigger={<Menu.Item name='Add image' as='a' icon='image' />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
+                <Modal open={this.state.modalOpen} onClose={this.handleModalClose} trigger={<Menu.Item name='Add image' as='a' icon='image' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
                   <Header icon='image' content='Add media' />
                   <Modal.Actions>
-                    <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={true} options={options} />
+                    <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={true} options={options} onSuccess={this.afterUpload} />
                   </Modal.Actions>
                 </Modal>
-                <Modal trigger={<Menu.Item name='Add video' as='a' icon='video' />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
+                <Modal open={this.state.modal2Open} onClose={this.handleModal2Close} trigger={<Menu.Item name='Add video' as='a' icon='video' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
                   <Header icon='video' content='Add video' />
                   <Modal.Actions>
-                    <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={false} options={options} />
+                    <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={false} options={options} onSuccess={this.afterUpload} />
                   </Modal.Actions>
                 </Modal>
-                <Menu.Item name='Post' as='a' icon='plus circle' onClick={this.submitForm} />
+                <Menu.Item>
+                  <Button inverted color='grey' onClick={this.submitForm} icon='plus circle' labelPosition='left' content='Post' />
+                </Menu.Item>
               </Menu>
-              <ListErrors errors={this.props.errors}></ListErrors>
+              <Portal onClose={this.handleClose} open={isOpen}>
+                <Segment style={{ left: '40%', position: 'fixed', top: '50%', zIndex: 1000 }}>
+                  <p>{message}</p>
+                  <ListErrors errors={this.props.errors}></ListErrors>
+                </Segment>
+              </Portal>
             </Form>
             <div className={!this.props.currentUser ? 'let' : 'hide'}>
               <Header

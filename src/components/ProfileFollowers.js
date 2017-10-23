@@ -1,4 +1,4 @@
-import ArticleList from './ArticleList';
+import PostList from './PostList';
 import { Profile, mapStateToProps } from './Profile';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -44,7 +44,7 @@ class ProfileFollowers extends Profile {
 
   renderList() {
     return (
-      <ArticleList
+      <PostList
         fixed='variable'
         columns='3'
         pager={this.props.pager}

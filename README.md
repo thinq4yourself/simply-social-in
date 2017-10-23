@@ -2,26 +2,21 @@
 
 > ### React + Redux social pattern based app based on simple API spec.
 
-#### Invision + Sketch mockups
+### [Simply Social demo app](https://simply-social-in.firebaseapp.com)
 
-<a href="https://invis.io/U6E2I8N9P" target="_blank"><img  src="https://projects.invisionapp.com/static-signed/live-embed/146645980/259626938/1/latest/1L6KV1T5YoUr2aM6ht344jClEDzyVtZrIHuV3gxY9bsirSw1JNWpxlE7Or9tAlilEnmNJOwyEpCXhze7SVlELkmlEPwlE/Artboard-2x-Home.png" /></a>
-
-### [Demo](https://simply-social-in.firebaseapp.com)&nbsp;&nbsp;&nbsp;&nbsp;[Simply Social](https://github.com/thinq4yourself/simply-social-in)
-
+- URL: `https://github.com/thinq4yourself/simply-social-in`
 - Username: `sampleuser@tester.com`
 - Password: `testtest`
 
-> This demo account is provided for 1uick access. 
+> This demo account is provided for quick access. 
+>
 > You can easily [create your account here]().
-
-There are also may be some notes in [**the wiki**](https://github.com/thinq4yourself/simply-social-in/wiki) on  the various patterns used in this codebase and how they work.
-
 
 ## Getting started
 
-You can view a live demo over at https://simply-social-in.firebaseapp.com
+> Github repo: https://github.com/thinq4yourself/simply-social-in
 
-To get the frontend running locally:
+To get the app running locally:
 
 - Clone this repo
 - `yarn install` to install all required dependencies
@@ -30,6 +25,8 @@ To get the frontend running locally:
 Local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure port in scripts section of `package.json`: this app uses [cross-env](https://github.com/kentcdodds/cross-env) to set environment variable PORT for React scripts, which is a Windows-compatible way of setting environment variables.
 
 If you want to change the API URL to a local server, simply edit `src/api.js` and change `API_ROOT` to the local server's URL (i.e. `http://localhost:3000/api`)
+
+There are also may be some notes in [**the wiki**](https://github.com/thinq4yourself/simply-social-in/wiki) on  the various patterns used in this codebase and how they work.
 
 
 ## Functionality overview
@@ -76,22 +73,66 @@ The example application is a social site (i.e. a twitter.com clone) called "Simp
 - Filepicker for image/video upload
 
 ## App Hosting
-- I chose to host this on Firebase via CDN and reduce the overheard of a Node server. 
- - For one - performance is better for lightweight React apps that run only in the browser. 
- - Also comes packed with features like Auth, Node in the cloud (Functions), Analytics, and more.
-- I have mirrored this at Heroku to show the slower to render version, but as requested in the specs :) 
- 
+I chose to host this on Firebase via CDN and reduce the overheard of a Node server. As a real world example this is lower maintenance and less overhead for simple apps and landing pages 
+
+I only had to focus on the React app that runs in the browser. 
+
+Plus Firebase also comes packed with features like Auth, Node in the cloud (Functions), Analytics, and more.
+
+> I have also [mirrored](#heroku-demo) this at Heroku to show the ease of either platform - as requested in the specs :) 
+
+### Firebase Demo
 > - Firebase Demo: https://simply-social-in.firebaseapp.com
 > - Firebase Project: https://console.firebase.google.com/project/simply-social-in/
 >   - Request access to audit if you like
 
+#### Use cases
+
+| Case  | Url  | Class  |
+|---|:-:|---|
+| User profile  | [@sampleusertester](https://simply-social-in.firebaseapp.com/@sampleusertester)  | Profile.js  |
+| Favorites  | [@sampleusertester/favorite](https://simply-social-in.firebaseapp.com/@sampleusertester/favorites)  | [`ProfileFavorites.js`](#)  |
+| Followers  | [@sampleusertester/follower](https://simply-social-in.firebaseapp.com/@sampleusertester/followers)  | [`ProfileFollwers.js`](#)  |
+| Home  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/index.js`](#)  |
+|
+| Add message  | [home](https://simply-social-in.firebaseapp.com/)  | [`Home/Banner.js`](#)  |
+|
+| View message  | [home](https://simply-social-in.firebaseapp.com/post/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| Edit message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| Delete message  | [home](https://simply-social-in.firebaseapp.com/editor/this-is-my-message-21frvs)  | [`Post/index.js`](#)  |
+| User Settings  | [home](https://simply-social-in.firebaseapp.com/settings)  | [`Settings.js`](#)  |
+| Login  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Login.js`](#)  |
+| Register  | [home](https://simply-social-in.firebaseapp.com/login)  | [`Register.js`](#)  |
+
+
 --- 
 
-> Heroku: 
+### Heroku Demo
+> - Heroku Demo: https://simply-social-in.herokuapp.com/
+> - Heroku Project: https://dashboard.heroku.com/apps/simply-social-in
+>   - Request access to audit if you like
+
+---
 
 ## Deploy
 
-To deploy to Firebase:
+### To deploy to Firebase:
 ```
 $ firebase login  # login to firebase toolbelt
-$ 
+$ yarn build
+$ firebase deploy
+```
+
+### To deploy to Heroku:
+```
+$ heroku login  # login to firebase toolbelt
+$ yarn build
+$ git push heroku master
+```
+
+---
+
+#### Invision + Sketch mockups
+
+> Invision Project (basic): https://invis.io/U6E2I8N9P
+<a href="https://invis.io/U6E2I8N9P" target="_blank"><img  src="https://projects.invisionapp.com/static-signed/live-embed/146645980/259626938/1/latest/1L6KV1T5YoUr2aM6ht344jClEDzyVtZrIHuV3gxY9bsirSw1JNWpxlE7Or9tAlilEnmNJOwyEpCXhze7SVlELkmlEPwlE/Artboard-2x-Home.png" /></a>

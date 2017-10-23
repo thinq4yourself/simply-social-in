@@ -1,4 +1,4 @@
-import ArticleList from './ArticleList';
+import PostList from './PostList';
 import React from 'react';
 import faker from 'faker';
 import { Link } from 'react-router-dom';
@@ -94,7 +94,7 @@ class Profile extends React.Component {
 
   renderList() {
     return (
-      <ArticleList
+      <PostList
         fixed='fixed-width'
         columns='1'
         pager={this.props.pager}
@@ -151,7 +151,7 @@ class Profile extends React.Component {
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row style={{paddingTop: 0, marginTop: '-42px'}}>
               <Grid.Column>
-                <Segment style={{ padding: '0.292em 0em' }} vertical>
+                <Segment style={{ padding: '0.192em 0em' }} vertical>
                   <Container>
                     <div className="feed-toggle ui text container" style={{padding: '50px auto 5px auto'}}>
                       {this.renderTabs()}

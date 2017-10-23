@@ -1,4 +1,4 @@
-import ArticleList from '../ArticleList';
+import PostList from '../PostList';
 import React from 'react';
 import api from '../../services/api';
 import { connect } from 'react-redux';
@@ -34,14 +34,17 @@ const GlobalFeedTab = props => {
 };
 
 const TagFilterTab = props => {
-  const clickHandler = ev => {
-    ev.preventDefault();
-    // props.onTabClick('video', page => api.Articles.byTag('video', page), api.Articles.byTag('video'));
-    props.onTabClick(props.fixed, props.columns, props.tag, page => api.Articles.byTag('video', page), api.Articles.byTag('video'));
-  };
-  return (
-    <Menu.Item name='Video' active={props.tab === 'video'} onClick={clickHandler} />
-  );
+  if (props.token) {
+    const clickHandler = ev => {
+      ev.preventDefault();
+      // props.onTabClick('video', page => api.Articles.byTag('video', page), api.Articles.byTag('video'));
+      props.onTabClick(props.fixed, props.columns, props.tag, page => api.Articles.byTag('video', page), api.Articles.byTag('video'));
+    };
+    return (
+      <Menu.Item name='Video' active={props.tab === 'video'} onClick={clickHandler} />
+    );
+  }
+  return null;
 };
 
 const mapStateToProps = state => ({
@@ -59,7 +62,9 @@ const MainView = props => {
     <Segment style={{ padding: '0.292em 0em' }} vertical>
       <Container>
         <div className="feed-toggle ui text container" style={{paddingBottom: '50px'}}>
-          <Menu pointing inverted secondary borderless size='massive' style={{ margin: '0 auto 0 30%', borderTop: 'none', borderRight: 'none', borderLeft: 'none' }}>
+          <Menu pointing inverted secondary borderless 
+            size='massive' 
+            style={{ margin: props.token ? '0 auto 0 30%' : '0 auto 0 40%', borderTop: 'none', borderRight: 'none', borderLeft: 'none' }}>
 
             <GlobalFeedTab 
               fixed='fixed-width' 
@@ -77,12 +82,13 @@ const MainView = props => {
               columns='3' 
               tab={props.tab} 
               tag="video" 
+              token={props.token}
               onTabClick={props.onTabClick} />
 
           </Menu>
         </div>
 
-        <ArticleList
+        <PostList
           fixed={props.fixed || 'fixed-width'}
           columns={props.columns || 1}
           pager={props.pager}

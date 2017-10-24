@@ -4,7 +4,7 @@
 
 ### [Simply Social demo app](https://simply-social-in.firebaseapp.com)
 
-- URL: `https://simply-social-in.firebaseapp.com`
+- **Demo URL**: `https://simply-social-in.firebaseapp.com`
 - Username: `sampleuser@tester.com`
 - Password: `testtest`
 
@@ -14,7 +14,7 @@
 
 ## Getting started
 
-> Github repo: https://simply-social-in.firebaseapp.com
+> **Github repo**: https://github.com/thinq4yourself/simply-social-in
 
 To get the app running locally:
 

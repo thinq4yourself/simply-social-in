@@ -29,7 +29,7 @@ $ yarn install
 $ yarn start
 ```
 
-The local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure this port in the scripts section of [`package.json`[(https://github.com/thinq4yourself/simply-social-in/blob/master/package.json). This app uses [cross-env](https://github.com/kentcdodds/cross-env) to set environment variable PORT for React scripts, which is a Windows-compatible way of setting environment variables.
+The local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure this port in the scripts section of [`package.json`](https://github.com/thinq4yourself/simply-social-in/blob/master/package.json). This app uses [cross-env](https://github.com/kentcdodds/cross-env) to set environment variable PORT for React scripts, which is a Windows-compatible way of setting environment variables.
 
 If you want to change the API URL to a local server, simply edit [`src/services/api.js`](https://github.com/thinq4yourself/simply-social-in/blob/master/src/services/api.js) and change `API_ROOT` to the local server's URL (i.e. `http://localhost:3000/api`)
 

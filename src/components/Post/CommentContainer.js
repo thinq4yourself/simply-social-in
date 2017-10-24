@@ -3,7 +3,7 @@ import CommentList from './CommentList';
 import React from 'react';
 import { Header, Segment, Container, Comment, Divider } from 'semantic-ui-react'
 
-const ComntContainer = props => {
+const CommentContainer = props => {
   if (props.currentUser) {
     return (
       <Segment vertical>

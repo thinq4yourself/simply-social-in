@@ -4,7 +4,7 @@
 
 ### [Simply Social demo app](https://simply-social-in.firebaseapp.com)
 
-- URL: `https://github.com/thinq4yourself/simply-social-in`
+- URL: `https://simply-social-in.firebaseapp.com`
 - Username: `sampleuser@tester.com`
 - Password: `testtest`
 

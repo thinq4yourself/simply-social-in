@@ -14,7 +14,7 @@
 
 ## Getting started
 
-> Github repo: https://github.com/thinq4yourself/simply-social-in
+> Github repo: https://simply-social-in.firebaseapp.com
 
 To get the app running locally:
 

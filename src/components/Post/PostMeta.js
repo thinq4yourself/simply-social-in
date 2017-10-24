@@ -11,7 +11,7 @@ const PostMeta = props => {
       <PostActions canModify={props.canModify} article={article} style={{position: 'absolute', right: 0}} />
       <Item.Group>
         <Item>
-          <Item.Image size='mini' rounded src={article.author.image} alt={article.author.username} />
+          <Item.Image size='mini' rounded src={faker.image.image()} />
           <Item.Content className='white'>
             <Item.Header className='white'>Author: <Link to={`/@${article.author.username}`} className="author white">{article.author.username}</Link></Item.Header>
             <Item.Description className='white'>{new Date(article.createdAt).toDateString()}</Item.Description>

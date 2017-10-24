@@ -4,17 +4,17 @@
 
 ### [Simply Social demo app](https://simply-social-in.firebaseapp.com)
 
-- URL: `https://simply-social-in.firebaseapp.com`
+- **Demo URL**: `https://simply-social-in.firebaseapp.com`
 - Username: `sampleuser@tester.com`
 - Password: `testtest`
 
 > This demo account is provided for quick access. 
 >
-> You can easily [create your account here]().
+> You can easily [create your account here](https://simply-social-in.firebaseapp.com/register).
 
 ## Getting started
 
-> Github repo: https://simply-social-in.firebaseapp.com
+> **Github repo**: https://github.com/thinq4yourself/simply-social-in
 
 To get the app running locally:
 
@@ -22,11 +22,16 @@ To get the app running locally:
 - `yarn install` to install all required dependencies
 - `yarn start` to start the local server (this project uses create-react-app)
 
-Local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure port in scripts section of `package.json`: this app uses [cross-env](https://github.com/kentcdodds/cross-env) to set environment variable PORT for React scripts, which is a Windows-compatible way of setting environment variables.
+```
+$ git clone git@github.com:thinq4yourself/simply-social-in.git
+$ cd simply-social-in
+$ yarn install
+$ yarn start
+```
 
-If you want to change the API URL to a local server, simply edit `src/api.js` and change `API_ROOT` to the local server's URL (i.e. `http://localhost:3000/api`)
+The local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure this port in the scripts section of [`package.json`](https://github.com/thinq4yourself/simply-social-in/blob/master/package.json). This app uses [cross-env](https://github.com/kentcdodds/cross-env) to set environment variable PORT for React scripts, which is a Windows-compatible way of setting environment variables.
 
-There are also may be some notes in [**the wiki**](https://github.com/thinq4yourself/simply-social-in/wiki) on  the various patterns used in this codebase and how they work.
+If you want to change the API URL to a local server, simply edit [`src/services/api.js`](https://github.com/thinq4yourself/simply-social-in/blob/master/src/services/api.js) and change `API_ROOT` to the local server's URL (i.e. `http://localhost:3000/api`)
 
 
 ## Functionality overview
@@ -37,7 +42,7 @@ The example application is a social site (i.e. a twitter.com clone) called "Simp
 
 - Authentication via JWT (login/signup/logout)
 - User model (sign up & user profile screens)
-- Posts model
+- Posts model 
 - Comments on posts
 - Paginated lists of posts
 - Favorite posts
@@ -46,17 +51,19 @@ The example application is a social site (i.e. a twitter.com clone) called "Simp
 
 ### The general page breakdown:
 
-- Home page (URL: /#/ )
-    - List of posts
-    - List of posts pulled from either user feed, image, or by video feed
-    - Pagination for list of posts
-- Sign in/Sign up pages (URL: /#/login, /#/register )
-    - Use JWT (store the token in localStorage)
-- Profile page (URL: /#/@username, /#/@username/favorites, /#/@username/followers )
-    - Show basic user info
+- Home page (URL: `/` )
+    - List of posts 
+    - List of posts pulled from either user feed, image, or by video feed 
+    - Pagination for list of posts 
+    - Add as Favorite
+- Sign in/Sign up pages (URL: `/#/login`, `/register` )
+    - Use `JWT` (store the token in localStorage)
+- Profile page (URL: `/#/@username`, `/@username/favorites`, `/@username/followers` )
+    - Show basic user info 
     - List of posts populated from author's created posts or author's favorited posts
-- Editor page to create/edit posts (URL: /#/editor, /#/editor/post-slug )
-- Post page (URL: /#/post/post-slug )
+    - Add as Favorite
+- Editor page to create/edit posts (URL: `/editor`, `/editor/post-slug` )
+- Post page (URL: `/post/post-slug`)
     - Delete post button (only shown to post's author)
     - Render markdown from server client side
     - Comments section at bottom of page
@@ -65,12 +72,12 @@ The example application is a social site (i.e. a twitter.com clone) called "Simp
 <br />
 
 ## Stack highlights
-- React + Redux
-- Redux Router (dom)
-- Semantic UI for React
+- [React](https://reactjs.org/) + [Redux](http://redux.js.org/)
+- Dynamic routing with [React Router Dom](https://reacttraining.com/react-router/core/guides/philosophy/dynamic-routing)
+- [Semantic UI](http://react.semantic-ui.com/) for React
 - [Faker API](https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html#random) for smart demo data
   - Live Posts/User API for even smart demo data
-- Filepicker for image/video upload
+- [Filestack](https://www.filestack.com) for image/video upload
 
 ## Redux Overview
 The app is built as a Redux pure app. Since the app is small I used minimalistic configuration and pure containers. 
@@ -89,14 +96,16 @@ export const ASYNC_START = 'ASYNC_START';
 export const ASYNC_END = 'ASYNC_END';
 
 ...
+
+See code repository for more at ./src/reducers/
 ```
 
 ## App Hosting
 I chose to host this on Firebase via CDN and reduce the overheard of a Node server. As a real world example this is lower maintenance and less overhead for simple apps and landing pages 
 
-I only had to focus on the React app that runs in the browser. 
+I only had to focus on the React app that runs in the browser. This makes the build and deploy process much, much faster. 
 
-Plus Firebase also comes packed with features like Auth, Node in the cloud (Functions), Analytics, and more.
+Plus - Firebase comes packed with features like Auth, Node in the cloud (Functions), Analytics, and more.
 
 > I have also [mirrored](#heroku-demo) this at Heroku to show the ease of either platform - as requested in the specs :) 
 

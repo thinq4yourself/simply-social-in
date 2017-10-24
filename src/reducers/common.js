@@ -38,8 +38,8 @@ export default (state = defaultState, action) => {
     case LOGOUT:
       return { ...state, redirectTo: '/', token: null, currentUser: null };
     case HOME_ARTICLE_SUBMITTED:
-      const HomeredirectUrl = `/`;
-      return { ...state, redirectTo: HomeredirectUrl };
+      const homeRedirectUrl = `/`;
+      return { ...state, redirectTo: homeRedirectUrl };
     case ARTICLE_SUBMITTED:
       const redirectUrl = `/post/${action.payload.article.slug}`;
       return { ...state, redirectTo: redirectUrl };

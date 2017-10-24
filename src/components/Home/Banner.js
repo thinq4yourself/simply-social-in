@@ -21,7 +21,7 @@ import {
   ADD_TAG,
   EDITOR_PAGE_LOADED,
   REMOVE_TAG,
-  HOME_ARTICLE_SUBMITTED,
+  ARTICLE_SUBMITTED,
   EDITOR_PAGE_UNLOADED,
   UPDATE_FIELD_EDITOR
 } from '../../constants/actionTypes';
@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch => ({
   onRemoveTag: tag =>
     dispatch({ type: REMOVE_TAG, tag }),
   onSubmit: payload =>
-    dispatch({ type: HOME_ARTICLE_SUBMITTED, payload }),
+    dispatch({ type: ARTICLE_SUBMITTED, payload }),
   onUnload: payload =>
     dispatch({ type: EDITOR_PAGE_UNLOADED }),
   onUpdateField: (key, value) =>

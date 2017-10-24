@@ -3,7 +3,9 @@ import Header from './Header';
 import React from 'react';
 import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
-import { Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Fader from 'react-fader'
+import Switch from 'react-router-transition-switch'
 import Post from '../components/Post';
 import Editor from '../components/Editor';
 import Home from '../components/Home';
@@ -57,7 +59,7 @@ class App extends React.Component {
           <Header
             appName={this.props.appName}
             currentUser={this.props.currentUser} />
-            <Switch>
+            <Switch component={Fader}>
             <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />

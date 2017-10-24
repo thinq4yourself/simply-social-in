@@ -17,7 +17,7 @@ const DeleteButton = props => {
 
   if (props.show) {
     return (
-      <span><Icon link name='trash outline' onClick={del} /> Delete comment</span>
+      <a onClick={del}><Icon link name='trash outline' /> Delete comment</a>
     );
   }
   return null;

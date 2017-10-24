@@ -38,7 +38,7 @@ class CommentInput extends React.Component {
             onChange={this.setBody}
             rows='3'
             />
-          <Button content='Add Comment' labelPosition='left' icon='edit' primary color='teal' />
+          <Button content='Add Comment' labelPosition='left' icon='edit' color='teal' />
       </Form>
     );
   }

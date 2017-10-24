@@ -167,22 +167,13 @@ class Editor extends React.Component {
                     icon='page'
                     iconPosition='left'
                   />
-                  <Form.Field
-                    control={TextArea}
-                    label='Tags (video, image)'
-                    placeholder="Add either 'video' or 'image'"
-                    value={this.props.tagInput}
-                    onChange={this.changeTagInput}
-                    onKeyUp={this.watchForEnter}
-                    rows={2}
-                    icon='tag'
-                    iconPosition='left'
-                  />
                   <Dropdown
-                    placeholder='Tags' fluid multiple selection
+                    text='Tags' fluid multiple selection
                     options={TagOptions}
                     value={this.props.tagInput}
                     onChange={this.changeTagInput} 
+                    icon='tag'
+                    iconPosition='right'
                   /><br /><br />
                   <ReactFilepicker apikey='AtgHjDJ9wQb6bX0hLp1ILz' defaultWidget={true} options={options} /><br />
                 </Segment>

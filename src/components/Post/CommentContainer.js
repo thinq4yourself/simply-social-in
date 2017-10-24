@@ -1,10 +1,9 @@
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
-import { Link } from 'react-router-dom';
 import React from 'react';
 import { Header, Segment, Container, Comment, Divider } from 'semantic-ui-react'
 
-const CommentContainer = props => {
+const ComntContainer = props => {
   if (props.currentUser) {
     return (
       <Segment vertical>

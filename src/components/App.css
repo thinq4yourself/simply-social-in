@@ -1,3 +1,14 @@
+a {
+    color: #00B286;
+}
+
+a:hover {
+    color: #009c95;
+}
+
+.ui.form textarea:focus {
+    border-color: #00B286 !important;
+}
 .ui.secondary.pointing.menu .item {
     padding: 8px;
 }
@@ -60,7 +71,7 @@
 }
 
 a.white:hover, .white a:hover {
-    color: #666 !important;
+    color: #00B286 !important;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

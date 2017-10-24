@@ -159,10 +159,10 @@ class Banner extends React.Component {
           <Segment textAlign='center' padded='very' inverted color='teal' className='new-post'>
             <Form className={this.props.currentUser ? 'let' : 'hide'} id='PostForm'>
               <Form.Field>
-                <Input value={this.props.title} onChange={this.changeTitle} inverted fluid icon='comment outline' iconPosition='left' placeholder="What's on your mind?" className='start-post' />
+                <Input value={this.props.title} onChange={this.changeTitle} inverted fluid placeholder="What's on your mind?" className='start-post' />
               </Form.Field>
               <Menu secondary inverted>
-                <Responsive minWidth={768}>
+                <Responsive minWidth={768} style={{display: 'flex'}}>
                   <Modal open={this.state.modalOpen} onClose={this.handleModalClose} trigger={<Menu.Item name='Add image' as='a' icon='image' onClick={this.handleModalOpen} />} basic size='small' style={{marginTop: '-1rem'}} closeIcon>
                     <Header icon='image' content='Add media' />
                     <Modal.Actions>
@@ -177,7 +177,7 @@ class Banner extends React.Component {
                   </Modal.Actions>
                 </Modal>
                 <Menu.Item>
-                  <Button inverted color='grey' onClick={this.submitForm} icon='plus circle' labelPosition='left' content='Post' />
+                <Button circular inverted onClick={this.submitForm} icon='plus circle' size='large' style={{fontSize: '1.5em'}} />
                 </Menu.Item>
               </Menu>
               <Portal onClose={this.handleClose} open={isOpen}>

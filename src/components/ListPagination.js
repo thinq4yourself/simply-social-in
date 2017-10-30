@@ -3,6 +3,7 @@ import api from '../services/api';
 import { connect } from 'react-redux';
 import { SET_PAGE } from '../constants/actionTypes';
 import { Container, Grid, Segment, Menu } from 'semantic-ui-react'
+import ScrollToAnchor from '../utils/ScrollToAnchor'
 
 const mapDispatchToProps = dispatch => ({
   onSetPage: (page, payload) =>
@@ -20,10 +21,12 @@ const ListPagination = props => {
   }
 
   const setPage = page => {
-    if(props.pager) {
+    if (props.pager) {
       props.onSetPage(page, props.pager(page));
-    }else {
+      ScrollToAnchor();
+    } else {
       props.onSetPage(page, api.Articles.all(page))
+      ScrollToAnchor();
     }
   };
 

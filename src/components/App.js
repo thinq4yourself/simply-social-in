@@ -3,7 +3,7 @@ import Header from './Header';
 import React from 'react';
 import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Fader from 'react-fader'
 import Switch from 'react-router-transition-switch'
 import Post from '../components/Post';

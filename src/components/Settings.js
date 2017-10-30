@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import ListErrors from './ListErrors';
 import React from 'react';
 import api from '../services/api';
@@ -7,7 +8,7 @@ import {
   SETTINGS_PAGE_UNLOADED,
   LOGOUT
 } from '../constants/actionTypes';
-import { Form, TextArea, Button, Header, Segment, Container } from 'semantic-ui-react'
+import { Form, TextArea, Button, Header, Segment, Container, Grid } from 'semantic-ui-react'
 
 class SettingsForm extends React.Component {
   constructor() {
@@ -170,9 +171,11 @@ class SettingsForm extends React.Component {
                   </Form.Input>
                 </Segment>
                 <Segment attached='bottom'>
-                  <Form.Field control={Button} disabled={this.props.inProgress} onClick={this.submitForm} color='teal'>
-                    Save
-                  </Form.Field>
+                  <Grid.Column width={3}>
+                    <Form.Field fluid control={Button} loading={this.props.inProgress} disabled={this.props.inProgress} onClick={this.submitForm} color='teal'>
+                      Save
+                    </Form.Field>
+                  </Grid.Column>
                 </Segment>
               </Form>
             </div>
@@ -204,6 +207,7 @@ class Settings extends React.Component {
         <SettingsForm
           currentUser={this.props.currentUser}
           onSubmitForm={this.props.onSubmitForm} />
+        <Footer />
       </div>
     );
   }

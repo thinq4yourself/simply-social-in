@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import ListErrors from './ListErrors';
 import React from 'react';
@@ -84,6 +85,7 @@ class Login extends React.Component {
             </Grid.Column>
           </Grid>
         </div>
+        <Footer />
       </div>
     );
   }

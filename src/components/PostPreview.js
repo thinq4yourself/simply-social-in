@@ -59,7 +59,7 @@ const PostPreview = props => {
         <Card.Content>
           <Card.Header>
             <Header as='h4' color='black'>
-              <Link to={`/post/${article.slug}`} className='ui header black'><Image floated='left' size='mini' shape='rounded' src={faker.internet.avatar()} /></Link>
+              <Link to={`/post/${article.slug}`} className='ui header black'><Image floated='left' size='large' shape='rounded' src={faker.internet.avatar()} /></Link>
               <Link to={`/post/${article.slug}`} className='ui header black'>{faker.name.firstName() + ' ' + faker.name.lastName()}</Link>
               <Card.Meta>
                 {article.title}
@@ -69,8 +69,8 @@ const PostPreview = props => {
           <Card.Header>
             <Link to={`/@${article.author.username}`} className="preview-link">{article.author.name}</Link>
           </Card.Header>
-          <Card.Description>
-            {article.description}: <Card.Meta>{faker.internet.url()}</Card.Meta>
+          <Card.Description style={{marginLeft: '50px'}}>
+            {article.description}: <Card.Meta style={{display: 'inline-block'}}>{faker.internet.url()}</Card.Meta>
             <ul className="tag-list">
               {
                 article.tagList.map(tag => {
@@ -87,8 +87,8 @@ const PostPreview = props => {
         <PostImage />
         <Card.Content extra>
           <div className='ui two'>
-            <div className="pull-xs-right">
-              <Dropdown upward trigger={<Button circular icon='share' basic style={{boxShadow: 'none', padding: '.78571429em 0.285714em .78571429em'}} />} pointing='top left' icon={null}>
+            <div className="right floated">
+              <Dropdown upward trigger={<Button circular icon='reply' basic style={{boxShadow: 'none', padding: '.78571429em 0.285714em .78571429em'}} />} pointing='top left' icon={null}>
                 <Dropdown.Menu>
                   <Dropdown.Item><Link to='#' className='ui nav-link'><Icon name='twitter' />Twitter</Link></Dropdown.Item>
                   <Dropdown.Item><Link to='#' className='ui nav-link'><Icon name='facebook' />Facebook</Link></Dropdown.Item>

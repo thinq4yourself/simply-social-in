@@ -34,7 +34,7 @@ const source = _.times(5, () => ({
 }))
 
 const DropDownTrigger = (
-  <Image avatar src={faker.internet.avatar()} />
+  <Image avatar shape='rounded' src={faker.internet.avatar()} />
 )
 
 const LoggedOutView = props => {
